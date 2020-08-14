@@ -27,12 +27,12 @@ typedef struct{
 
 /*********************X轴电机引脚定义*******************/
 //Motor 方向
-#define X_MOTOR_DIR_PIN                      GPIO_PIN_14
+#define X_MOTOR_DIR_PIN                      GPIO_PIN_0
 #define X_MOTOR_DIR_GPIO_PORT                GPIOB
 #define X_MOTOR_DIR_GPIO_CLK_ENABLE()        __HAL_RCC_GPIOB_CLK_ENABLE()
 
 //Motor 使能
-#define X_MOTOR_EN_PIN                       GPIO_PIN_12
+#define X_MOTOR_EN_PIN                       GPIO_PIN_2
 #define X_MOTOR_EN_GPIO_PORT                 GPIOB
 #define X_MOTOR_EN_GPIO_CLK_ENABLE()         __HAL_RCC_GPIOB_CLK_ENABLE()
 
