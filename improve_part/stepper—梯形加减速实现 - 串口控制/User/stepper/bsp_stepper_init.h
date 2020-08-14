@@ -12,12 +12,12 @@
 
 #if(CHANNEL_SW == 1)
 //Motor 方向 
-#define MOTOR_DIR_PIN                  	GPIO_PIN_14   
+#define MOTOR_DIR_PIN                  	GPIO_PIN_0  
 #define MOTOR_DIR_GPIO_PORT            	GPIOB                    
 #define MOTOR_DIR_GPIO_CLK_ENABLE()   	__HAL_RCC_GPIOB_CLK_ENABLE()
 
 //Motor 使能 
-#define MOTOR_EN_PIN                  	GPIO_PIN_12
+#define MOTOR_EN_PIN                  	GPIO_PIN_2
 #define MOTOR_EN_GPIO_PORT            	GPIOB                       
 #define MOTOR_EN_GPIO_CLK_ENABLE()    	__HAL_RCC_GPIOB_CLK_ENABLE()
 	
