@@ -36,7 +36,7 @@ void stepper_turn(int tim,float angle,float subdivide,uint8_t dir)
     delay_us(tim/2);
   }
   /*¹ØÊ¹ÄÜ*/
-  MOTOR_EN(LOW);
+  MOTOR_EN(ON);
 }
 
 

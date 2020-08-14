@@ -36,10 +36,10 @@ static void TIM_Mode_Config(void)
   TIM_TimeBaseStructure.Instance = MOTOR_PUL_TIM;
   /* 累计 TIM_Period个后产生一个更新或者中断*/    
   //当定时器从0计数到4999，即为5000次，为一个定时周期
-  TIM_TimeBaseStructure.Init.Period = 300-1;  
-  // 通用控制定时器时钟源TIMxCLK = HCLK/2=84MHz 
+  TIM_TimeBaseStructure.Init.Period = 1000-1;  
+  // 通用控制定时器时钟源TIMxCLK = HCLK=72MHz 
   // 设定定时器频率为=TIMxCLK/(TIM_Prescaler+1)=1MHz
-  TIM_TimeBaseStructure.Init.Prescaler = 84-1;
+  TIM_TimeBaseStructure.Init.Prescaler = 2-1;
   // 计数方式
   TIM_TimeBaseStructure.Init.CounterMode=TIM_COUNTERMODE_UP;
   // 采样时钟分频

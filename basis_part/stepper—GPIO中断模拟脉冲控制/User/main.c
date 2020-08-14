@@ -8,7 +8,7 @@
   ******************************************************************************
   * @attention
   *
-  * 实验平台:野火 F103-指南者 STM32 开发板 
+  * 实验平台:野火 F103-MINI STM32 开发板 
   * 论坛    :http://www.firebbs.cn
   * 淘宝    :https://fire-stm32.taobao.com
   *
@@ -46,9 +46,7 @@ int main(void)
   /*按键初始化*/	
   Key_GPIO_Config();  
   /*步进电机初始化*/
-  stepper_Init(); 
-
-  MOTOR_EN(HIGH);
+  stepper_Init();
 
   while(1)
   {     

@@ -4,28 +4,28 @@
 #include "stm32f1xx.h"
 #include "stm32f1xx_hal.h"
 
-#define MOTOR_PUL_TIM                   TIM2
-#define MOTOR_PUL_CLK_ENABLE()          __HAL_RCC_TIM2_CLK_ENABLE()
+#define MOTOR_PUL_TIM                   TIM3
+#define MOTOR_PUL_CLK_ENABLE()          __HAL_RCC_TIM3_CLK_ENABLE()
 
-#define MOTOR_PUL_IRQn                  TIM2_IRQn
-#define MOTOR_PUL_IRQHandler            TIM2_IRQHandler
+#define MOTOR_PUL_IRQn                  TIM3_IRQn
+#define MOTOR_PUL_IRQHandler            TIM3_IRQHandler
 
 //引脚定义
 /*******************************************************/
 //Motor 方向 
-#define MOTOR_DIR_PIN                   GPIO_PIN_7   
-#define MOTOR_DIR_GPIO_PORT             GPIOE                    
-#define MOTOR_DIR_GPIO_CLK_ENABLE()     __HAL_RCC_GPIOE_CLK_ENABLE()
+#define MOTOR_DIR_PIN                   GPIO_PIN_0   
+#define MOTOR_DIR_GPIO_PORT             GPIOB                    
+#define MOTOR_DIR_GPIO_CLK_ENABLE()     __HAL_RCC_GPIOB_CLK_ENABLE()
 
 //Motor 使能 
-#define MOTOR_EN_PIN                    GPIO_PIN_0
-#define MOTOR_EN_GPIO_PORT              GPIOD                    
-#define MOTOR_EN_GPIO_CLK_ENABLE()      __HAL_RCC_GPIOD_CLK_ENABLE()
+#define MOTOR_EN_PIN                    GPIO_PIN_2
+#define MOTOR_EN_GPIO_PORT              GPIOB                    
+#define MOTOR_EN_GPIO_CLK_ENABLE()      __HAL_RCC_GPIOB_CLK_ENABLE()
 
 //Motor 脉冲
-#define MOTOR_PUL_PIN                   GPIO_PIN_9
-#define MOTOR_PUL_GPIO_PORT             GPIOE
-#define MOTOR_PUL_GPIO_CLK_ENABLE()     __HAL_RCC_GPIOE_CLK_ENABLE()
+#define MOTOR_PUL_PIN                   GPIO_PIN_6
+#define MOTOR_PUL_GPIO_PORT             GPIOC
+#define MOTOR_PUL_GPIO_CLK_ENABLE()     __HAL_RCC_GPIOC_CLK_ENABLE()
 
 /************************************************************/
 #define HIGH GPIO_PIN_SET       //高电平

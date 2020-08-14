@@ -8,7 +8,7 @@
   ******************************************************************************
   * @attention
   *
-  * 实验平台:野火 F103-指南者 STM32 开发板 
+  * 实验平台:野火 F103-MINI STM32 开发板 
   * 论坛    :http://www.firebbs.cn
   * 淘宝    :https://fire-stm32.taobao.com
   *
@@ -31,7 +31,7 @@
   */
 int main(void) 
 {
-  int key_val=0;
+  int key_val=OFF;
   int i=0;
   int dir_val=0;
   int angle_val=90;
@@ -46,7 +46,6 @@ int main(void)
   Key_GPIO_Config();
   /*步进电机初始化*/
   stepper_Init();
-  /*开启步进电机使能*/
   while(1)
   {     
     if( Key_Scan(KEY1_GPIO_PORT,KEY1_PIN) == KEY_ON  )

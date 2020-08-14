@@ -23,14 +23,14 @@
   * @retval 无
   */
 void LED_GPIO_Config(void)
-{				
+{		
+		
     /*定义一个GPIO_InitTypeDef类型的结构体*/
     GPIO_InitTypeDef  GPIO_InitStruct;
 
     /*开启LED相关的GPIO外设时钟*/
     LED1_GPIO_CLK_ENABLE();
     LED2_GPIO_CLK_ENABLE();
-    LED3_GPIO_CLK_ENABLE();
   
     /*选择要控制的GPIO引脚*/															   
     GPIO_InitStruct.Pin = LED1_PIN;	
@@ -51,11 +51,9 @@ void LED_GPIO_Config(void)
     GPIO_InitStruct.Pin = LED2_PIN;	
     HAL_GPIO_Init(LED2_GPIO_PORT, &GPIO_InitStruct);	
 
-    /*选择要控制的GPIO引脚*/															   
-    GPIO_InitStruct.Pin = LED3_PIN;	
-    HAL_GPIO_Init(LED3_GPIO_PORT, &GPIO_InitStruct);	
-
     /*关闭RGB灯*/
     LED_RGBOFF;
 }
+
+
 /*********************************************END OF FILE**********************/
