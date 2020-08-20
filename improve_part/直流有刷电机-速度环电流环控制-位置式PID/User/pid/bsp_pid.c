@@ -21,7 +21,7 @@ void PID_param_init(void)
   pid_speed.integral=0.0;
 
   pid_speed.Kp = 0.5;
-  pid_speed.Ki = 0.03;
+  pid_speed.Ki = 0.0;
   pid_speed.Kd = 0.0;
 
   /* 电流环相关初始化参数 */
