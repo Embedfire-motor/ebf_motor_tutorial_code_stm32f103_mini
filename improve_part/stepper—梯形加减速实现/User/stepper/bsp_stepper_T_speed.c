@@ -136,8 +136,10 @@ void stepper_move_T( int32_t step, uint32_t accel, uint32_t decel, uint32_t spee
 	/*在当前计数值基础上设置定时器比较值*/
 	__HAL_TIM_SET_COMPARE(&TIM_TimeBaseStructure,MOTOR_PUL_CHANNEL_x,tim_count+srd.step_delay); 
 	/*使能定时器通道*/
-	TIM_CCxChannelCmd(MOTOR_PUL_TIM, MOTOR_PUL_CHANNEL_x, TIM_CCx_ENABLE);
-	MOTOR_EN(ON);
+	TIM_CCxChannelCmd(MOTOR_PUL_TIM, MOTOR_PUL_CHANNEL_x, TIM_CCx_DISABLE);
+  __HAL_TIM_ENABLE_IT(&TIM_TimeBaseStructure, TIM_IT_CC1);
+  __HAL_TIM_MOE_ENABLE(&TIM_TimeBaseStructure);
+  __HAL_TIM_ENABLE(&TIM_TimeBaseStructure);
 }
 
 /**
@@ -180,13 +182,13 @@ void speed_decision()
 				step_count = 0;  // 清零步数计数器
 				rest = 0;        // 清零余值
 				// 关闭通道
-				TIM_CCxChannelCmd(MOTOR_PUL_TIM, MOTOR_PUL_CHANNEL_x, TIM_CCx_DISABLE);        
-				__HAL_TIM_CLEAR_FLAG(&TIM_TimeBaseStructure, MOTOR_TIM_FLAG_CCx);
+				HAL_TIM_OC_Stop_IT(&TIM_TimeBaseStructure,MOTOR_PUL_CHANNEL_x);
 
 				status.running = FALSE;
 				break;
 				/*步进电机加速状态*/
 				case ACCEL:
+				TIM_CCxChannelCmd(MOTOR_PUL_TIM, MOTOR_PUL_CHANNEL_x, TIM_CCx_ENABLE);
 				step_count++;
 				srd.accel_count++;
 
